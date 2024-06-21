@@ -1,0 +1,9 @@
+---
+entity: "github.com/AmadlaOrg/Entity$v1"
+name: EntityIAM
+description: Entity IAM configuration definitions.
+category: Application
+tags:
+  - sso
+  - web
+  - service

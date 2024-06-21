@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "https://raw.githubusercontent.com/AmadlaOrg/EntityApplication/master/IAM/.amadla/schema.json",
+  "title": "Amadla Entity Application IAM Configuration",
+  "description": "Defines the foundational properties of an Entity Application IAM configuration file.",
+  "properties": {
+
+  }
+}

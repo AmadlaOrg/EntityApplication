@@ -1,0 +1,7 @@
+---
+entity: "github.com/AmadlaOrg/Entity$v1"
+name: EntityApplication
+description: Entity Application configuration definitions.
+category: Application
+tags:
+  - general

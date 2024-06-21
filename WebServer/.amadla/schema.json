@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "https://raw.githubusercontent.com/AmadlaOrg/EntityApplication/master/WebServer/.amadla/schema.json",
+  "title": "Amadla Entity Application Web Server Configuration",
+  "description": "Defines the foundational properties of an Entity Application Web Server configuration file.",
+  "properties": {
+
+  }
+}

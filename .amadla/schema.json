@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "https://raw.githubusercontent.com/AmadlaOrg/EntityApplication/master/.amadla/schema.json",
+  "title": "Amadla Entity Application Configuration",
+  "description": "Defines the foundational properties of an Entity Application configuration file.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/datatypes.definitions.schema.json#/definitions/name",
+      "description": "Define the application name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Define the application description."
+    },
+    "workdir": {
+      "type": "string",
+      "description": ""
+    },
+    "provisioning": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entrypoint": {
+      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/utils.definitions.schema.json#/definitions/command",
+      "description": ""
+    },
+    "restart_policy": {
+      "type": "object",
+      "properties": {
+        "condition": {"type": "string"},
+        "delay": {"type": "string", "format": "duration"},
+        "max_attempts": {"type": "integer"},
+        "window": {"type": "string", "format": "duration"}
+      },
+      "additionalProperties": false,
+      "patternProperties": {"^x-": {}}
+    },
+    "healthcheck": {
+      "id": "#/definitions/healthcheck",
+      "type": "object",
+      "properties": {
+        "disable": {"type": "boolean"},
+        "interval": {"type": "string", "format": "duration"},
+        "retries": {"type": "number"},
+        "test": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ]
+        },
+        "timeout": {"type": "string", "format": "duration"},
+        "start_period": {"type": "string", "format": "duration"},
+        "start_interval": {"type": "string", "format": "duration"}
+      },
+      "additionalProperties": false,
+      "patternProperties": {"^x-": {}}
+    },
+    "development": {
+      "id": "#/definitions/development",
+      "type": ["object", "null"],
+      "properties": {
+        "watch": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "action"],
+            "properties": {
+              "ignore": {"type": "array", "items": {"type": "string"}},
+              "path": {"type": "string"},
+              "action": {"type": "string", "enum": ["rebuild", "sync", "sync+restart"]},
+              "target": {"type": "string"}
+            }
+          },
+          "additionalProperties": false,
+          "patternProperties": {"^x-": {}}
+        }
+      }
+    }
+  }
+}

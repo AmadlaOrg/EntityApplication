@@ -1,0 +1,16 @@
+---
+entity: "github.com/AmadlaOrg/Entity$v1"
+name: EntityWebServer
+description: Entity Web Server configuration definitions.
+category: Application
+tags:
+  - server
+  - web
+  - service
+require:
+  - entity: "github.com/AmadlaOrg/EntitySystem/Net$v1"
+    ports:
+      - 80
+      - 443
+  - entity: "github.com/AmadlaOrg/EntityApplication$v1"
+    restart_policy: ...
