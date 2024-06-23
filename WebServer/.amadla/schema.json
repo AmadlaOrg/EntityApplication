@@ -4,6 +4,27 @@
   "title": "Amadla Entity Application Web Server Configuration",
   "description": "Defines the foundational properties of an Entity Application Web Server configuration file.",
   "properties": {
-
+    "server_name": {
+      "type": "string",
+      "format": "uri"
+    },
+    "listen": {
+      "type": ["string","array"],
+      "items":{
+        "type": "string"
+      }
+    },
+    "location":{
+      "type": "string"
+    },
+    "root": {
+      "type": "string"
+    },
+    "index": {
+      "type": ["string","array"],
+      "items":{
+        "type": "string"
+      }
+    }
   }
 }

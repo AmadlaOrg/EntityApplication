@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "schema.json",
+  "title": "Amadla Entity RDBMS Configuration",
+  "description": "Defines the foundational properties of an Entity RDBMS configuration file.",
+  "properties": {
+
+  }
+}

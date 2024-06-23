@@ -1,6 +1,6 @@
 ---
-entity: "github.com/AmadlaOrg/Entity$v1"
-name: EntityApplication
+_entity: "github.com/AmadlaOrg/Entity$v1"
+name: Application
 description: Entity Application configuration definitions.
 category: Application
 tags:

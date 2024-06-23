@@ -1,16 +1,20 @@
 ---
-entity: "github.com/AmadlaOrg/Entity$v1"
-name: EntityWebServer
+_entity: "github.com/AmadlaOrg/Entity$v1"
+name: WebServer
 description: Entity Web Server configuration definitions.
 category: Application
 tags:
   - server
   - web
   - service
+self:
+  server_name: localhost
+  listen: !EntityId net_http_not_secure_secure
 require:
-  - entity: "github.com/AmadlaOrg/EntitySystem/Net$v1"
+  - _entity: "github.com/AmadlaOrg/EntitySystem/Net$v1"
+    _id: "net_http_not_secure_and_secure"
     ports:
       - 80
       - 443
-  - entity: "github.com/AmadlaOrg/EntityApplication$v1"
+  - _entity: "github.com/AmadlaOrg/EntityApplication$v1"
     restart_policy: ...

@@ -1,0 +1,9 @@
+---
+_entity: "github.com/AmadlaOrg/Entity$v1"
+name: DB
+description: Entity DB configuration definitions.
+category: Application
+tags:
+  - db
+  - service
+  - storage
