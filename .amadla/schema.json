@@ -5,18 +5,27 @@
   "description": "Defines the foundational properties of an Entity Application configuration file.",
   "type": "object",
   "properties": {
+
     "name": {
-      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/datatypes.definitions.schema.json#/definitions/name",
+      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/datatypes.definitions.schema.json#/$defs/name",
       "description": "Define the application name."
     },
+
+    "which": {
+      "type": "string",
+      "description": "Similar to the command `which` whereby it indicates the absolute path of where the application is found on the system."
+    },
+
     "description": {
       "type": "string",
       "description": "Define the application description."
     },
+
     "workdir": {
       "type": "string",
-      "description": ""
+      "description": "The path of where the application needs to be executed in."
     },
+
     "provisioning": {
       "type": "array",
       "description": "",
@@ -24,23 +33,35 @@
         "type": "string"
       }
     },
+
     "entrypoint": {
-      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/utils.definitions.schema.json#/definitions/command",
+      "$ref": "https://raw.githubusercontent.com/AmadlaOrg/common-json-schemas/master/utils.definitions.schema.json#/$defs/command",
       "description": ""
     },
+
     "restart_policy": {
       "type": "object",
       "properties": {
-        "condition": {"type": "string"},
-        "delay": {"type": "string", "format": "duration"},
-        "max_attempts": {"type": "integer"},
-        "window": {"type": "string", "format": "duration"}
+        "condition": {
+          "type": "string"
+        },
+        "delay": {
+          "type": "string",
+          "format": "duration"
+        },
+        "max_attempts": {
+          "type": "integer"
+        },
+        "window": {
+          "type": "string",
+          "format": "duration"
+        }
       },
       "additionalProperties": false,
       "patternProperties": {"^x-": {}}
     },
+
     "healthcheck": {
-      "id": "#/definitions/healthcheck",
       "type": "object",
       "properties": {
         "disable": {"type": "boolean"},
@@ -59,8 +80,8 @@
       "additionalProperties": false,
       "patternProperties": {"^x-": {}}
     },
+
     "development": {
-      "id": "#/definitions/development",
       "type": ["object", "null"],
       "properties": {
         "watch": {
@@ -80,5 +101,8 @@
         }
       }
     }
-  }
+  },
+  "required": [
+    "name"
+  ]
 }

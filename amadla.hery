@@ -1,0 +1,9 @@
+---
+_meta:
+  _entity: github.com/AmadlaOrg/Entity@latest
+  _body:
+    name: Application
+    description: Entity Application configuration definitions.
+    category: Application
+    tags:
+      - general
