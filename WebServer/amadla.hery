@@ -7,7 +7,7 @@ tags:
   - server
   - web
   - service
-self:
+_self:
   server_name: localhost
   listen: !EntityId net_http_not_secure_secure
 require:
@@ -17,4 +17,6 @@ require:
       - 80
       - 443
   - _entity: "github.com/AmadlaOrg/EntityApplication$v1"
-    restart_policy: ...
+    restart_policy:
+      condition: on-failure
+      max-attempts: 3
